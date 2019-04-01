@@ -1,14 +1,21 @@
 import sys
 import json
+import os
 from api_keys import *
 from default_query import *
 from sumologic import *
 from abuseipdb import AbuseIPDB
 
 def results(query_results,joined_results,autoQuery,console_show_join=False):
+    directory = "./logs"
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
     if console_show_join == True:
         print("Joined Results: " + '\n' + json.dumps(joined_results))
-    file = open("output_" + d.strftime("D%Y-%m-%d_") + d.strftime("T%H-%M-%S") + "_.txt", "w")
+    file = open(directory + "/output_" + d.strftime("D%Y-%m-%d_") + d.strftime("T%H-%M-%S") + "_.txt", "w")
     file.write("autoQuery = " + str(autoQuery) + '\n\n')
     if autoQuery == True:
         file.write("Query:\n" + query + '\n\n')
@@ -20,7 +27,13 @@ def results(query_results,joined_results,autoQuery,console_show_join=False):
     file.close()
 
 def fail_search(exception):
-    file = open("output_" + d.strftime("D%Y-%m-%d_") + d.strftime("T%H-%M-%S") + "_.txt", "w")
+    directory = "./logs"
+    try:
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+    except OSError:
+        print ('Error: Creating directory. ' +  directory)
+    file = open(directory + "/output_" + d.strftime("D%Y-%m-%d_") + d.strftime("T%H-%M-%S") + "_.txt", "w")
     file.write("autoQuery = " + str(autoQuery) + '\n\n')
     file.write("FAILED SEARCH" + '\n\n')
     file.write("EXCEPTION:\n" + str(exception) + '\n\n')
