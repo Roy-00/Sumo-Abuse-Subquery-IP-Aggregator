@@ -1,0 +1,19 @@
+python sumoLogic_abuseIPDB_aggregator.py default-all
+
+python sumoLogic_abuseIPDB_aggregator.py default default default default default default default default default default
+
+python sumoLogic_abuseIPDB_aggregator.py default default default default default default default default default ./logs/test
+
+python sumoLogic_abuseIPDB_aggregator.py default default default default False default default default default default
+
+python sumoLogic_abuseIPDB_aggregator.py default default default default False default default default default ./logs/test
+
+python sumoLogic_abuseIPDB_aggregator.py queries/Test_For_Success.txt default default default default default default default default default
+
+python sumoLogic_abuseIPDB_aggregator.py queries/Test_For_Success.txt default default default False default default default default default
+
+
+
+
+
+

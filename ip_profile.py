@@ -20,48 +20,48 @@ class IP_Profile:
     def getAttributes(self, includeIP=False):
         if includeIP == True:
             return {
-                    "ipAddress": self.ip_address,
-                    "abuseConfidenceScore": self.score,
-                    "countryCode": self.country_code,
-                    "countryName": self.country_name,
-                    "domain": self.domain,
-                    "ipVersion": self.ip_version,
-                    "isPublic": self.is_public,
-                    "isWhitelisted": self.is_whitelisted,
-                    "isp": self.isp,
-                    "lastReportedAt": self.last_report,
-                    "usageType": self.usage_type,
-                    "reports": self.reports
-                    }
-        else: 
+                "ipAddress": self.ip_address,
+                "abuseConfidenceScore": self.score,
+                "countryCode": self.country_code,
+                "countryName": self.country_name,
+                "domain": self.domain,
+                "ipVersion": self.ip_version,
+                "isPublic": self.is_public,
+                "isWhitelisted": self.is_whitelisted,
+                "isp": self.isp,
+                "lastReportedAt": self.last_report,
+                "usageType": self.usage_type,
+                "reports": self.reports
+            }
+        else:
             return {
-                    "abuseConfidenceScore": self.score,
-                    "countryCode": self.country_code,
-                    "countryName": self.country_name,
-                    "domain": self.domain,
-                    "ipVersion": self.ip_version,
-                    "isPublic": self.is_public,
-                    "isWhitelisted": self.is_whitelisted,
-                    "isp": self.isp,
-                    "lastReportedAt": self.last_report,
-                    "usageType": self.usage_type,
-                    "reports": self.reports
-                    }
+                "abuseConfidenceScore": self.score,
+                "countryCode": self.country_code,
+                "countryName": self.country_name,
+                "domain": self.domain,
+                "ipVersion": self.ip_version,
+                "isPublic": self.is_public,
+                "isWhitelisted": self.is_whitelisted,
+                "isp": self.isp,
+                "lastReportedAt": self.last_report,
+                "usageType": self.usage_type,
+                "reports": self.reports
+            }
 
     def __str__(self):
         output = [
-                  self.ip_address,
-                  "\n\tabuseConfidenceScore: " + self.score,
-                  "\n\tcountryCode: " + self.country_code,
-                  "\n\tcountryName: " + self.country_name,
-                  "\n\tdomain: " + self.domain,
-                  "\n\tipVersion: " + self.ip_version,
-                  "\n\tisPublic: " + self.is_public,
-                  "\n\tisWhitelisted: " + self.is_whitelisted,
-                  "\n\tisp: " + self.isp,
-                  "\n\tlastReportedAt: " + self.last_report,
-                  "\n\tusageType: " + self.usage_type + '\n'
-                ]
+            self.ip_address,
+            "\n\tabuseConfidenceScore: " + self.score,
+            "\n\tcountryCode: " + self.country_code,
+            "\n\tcountryName: " + self.country_name,
+            "\n\tdomain: " + self.domain,
+            "\n\tipVersion: " + self.ip_version,
+            "\n\tisPublic: " + self.is_public,
+            "\n\tisWhitelisted: " + self.is_whitelisted,
+            "\n\tisp: " + self.isp,
+            "\n\tlastReportedAt: " + self.last_report,
+            "\n\tusageType: " + self.usage_type + '\n'
+        ]
         if self.showReports == True:
             output.append("\treports: " + self.reports + '\n')
         return ''.join(output)

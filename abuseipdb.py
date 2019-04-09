@@ -38,10 +38,10 @@ class AbuseIPDB:
     @staticmethod
     def record_ip_data(json_load, include_reports=False, indent=False):
         checklist = [
-                     "abuseConfidenceScore", "countryCode", "countryName",
-                     "domain", "ipAddress", "ipVersion", "isPublic",
-                     "isWhitelisted", "isp", "lastReportedAt", "usageType"
-                    ]
+            "abuseConfidenceScore", "countryCode", "countryName",
+            "domain", "ipAddress", "ipVersion", "isPublic",
+            "isWhitelisted", "isp", "lastReportedAt", "usageType"
+        ]
         if include_reports == True:
             checklist.append("reports")
         retrieved = []
